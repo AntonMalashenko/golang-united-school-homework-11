@@ -14,5 +14,8 @@ func getOne(id int64) user {
 }
 
 func getBatch(n int64, pool int64) (res []user) {
-	return nil
+	for i := int64(0); i < n; i++ {
+		res = append(res, getOne(i))
+	}
+	return res
 }
